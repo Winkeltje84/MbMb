@@ -62,3 +62,6 @@ end
 
 # Use Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.6'
+
+# Use Device for authentication
+gem 'devise', '~> 4.2'
