@@ -14,7 +14,7 @@ As an example I'm looking at this App: [Car Maintenance Reminder Light](https://
 ## ScreenShots
 To be shot...
 
-## Running Locally
+## Running Locally - This won't do much for you at the moment... just warning you...
 Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bundler.io/) installed.
 You should also have a [Postgresql](https://www.postgresql.org/) database running.
 
