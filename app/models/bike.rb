@@ -10,5 +10,5 @@ class Bike < ApplicationRecord
               greater_than_or_equal_to: 1900,
               less_than_or_equal_to: Date.today.year
             }
-  validates :odometer, presence: true, lenght: { is: 6 }
+  validates :odometer, presence: true, length: { is: 6 }
 end
