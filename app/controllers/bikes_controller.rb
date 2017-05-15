@@ -25,6 +25,7 @@ class BikesController < ApplicationController
       redirect_to @bike, notice: "Your motorbike has been updated"
     else
       render :edit
+    end
   end
 
 
