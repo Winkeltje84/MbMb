@@ -6,6 +6,9 @@ class BikesController < ApplicationController
     @bikes = current_user.bikes
   end
 
+  def show
+  end
+
   def new
     @bike = current_user.bikes.build
   end
