@@ -1,0 +1,24 @@
+<div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Your Bikes</div>
+    <div class="panel-body">
+      <div class="col-xs-12 bikes-container">
+        <% @bikes.each do |bike| %>
+          <div class="bike-wrapper">
+
+              <h4><%= bike.name %></h4>
+
+
+              <div>Brand: <%= bike.brand %></div>
+              <div>Model: <%= bike.model %></div>
+              <div>Year: <%= bike.build %></div>
+              <div>Meter: <%= bike.odometer %></div>
+               <%= link_to "View", bike, class: "btn btn-default" %>
+
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Add new bike", new_bike_path, class: "btn btn-primary" %>
+</div>

@@ -6,6 +6,9 @@ class BikesController < ApplicationController
     @bikes = current_user.bikes
   end
 
+  def show
+  end
+
   def new
     @bike = current_user.bikes.build
   end
@@ -25,6 +28,7 @@ class BikesController < ApplicationController
       redirect_to @bike, notice: "Your motorbike has been updated"
     else
       render :edit
+    end
   end
 
 
