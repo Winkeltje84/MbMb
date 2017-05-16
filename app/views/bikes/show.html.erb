@@ -1,1 +1,8 @@
-show
+<h4><%= @bike.name %></h4>
+
+<div>Brand: <%= @bike.brand %></div>
+<div>Model: <%= @bike.model %></div>
+<div>Year: <%= @bike.build %></div>
+<div>Meter: <%= @bike.odometer %></div>
+
+<%= link_to "Back", bikes_path, class: "btn btn-default" %>
