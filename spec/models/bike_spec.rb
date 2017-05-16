@@ -55,11 +55,15 @@ describe "Bike model" do
     it "is invalid with a production year higher than the current date" do
       bike = Bike.new(build: 2019)
       bike.valid?
-      expect(build.errors).not_to have_key(:build)
+      expect(bike.errors).to have_key(:build)
+      #expect(bike.errors).not_to have_key(:build) #FAILS = OK
     end
 
     it "is invalid with a production year before 1900" do
-
+      bike = Bike.new(build: 1899)
+      bike.valid?
+      expect(bike.errors).to have_key(:build)
+      #expect(bike.errors).not_to have_key(:build) #FAILS = OK
     end
 
     it "is invalid without a current odemeter amount" do
@@ -70,7 +74,10 @@ describe "Bike model" do
     end
 
     it "is invalid when the odometer has more than 6 characters (eg. higher than 999999)" do
-
+      bike = Bike.new(odometer: 1000000)
+      bike.valid?
+      expect(bike.errors).to have_key(:odometer)
+      #expect(bike.errors).not_to have_key(:odometer) #FAILS = OK
     end
 
   end
