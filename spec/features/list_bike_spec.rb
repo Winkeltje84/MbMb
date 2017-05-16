@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe "Current user viewing the list of his/her bikes" do
   before { login_as user }
 
