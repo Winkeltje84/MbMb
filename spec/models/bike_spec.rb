@@ -79,6 +79,27 @@ describe "Bike model" do
       expect(bike.errors).to have_key(:odometer)
       #expect(bike.errors).not_to have_key(:odometer) #FAILS = OK
     end
+  end
+
+  describe "- Association with user: " do
+    let(:user) { create :user }
+    
+    it "has many bikes" do
+      bike1 = user.bikes.new(name: "first bike")
+      bike2 = user.bikes.new(name: "second bike")
+
+      expect(user.bikes).to include(bike1)
+      expect(user.bikes).to include(bike2)
+    end
+
+    let(:other_user) { create :user }
+
+    it "doesn't have another_user's bike" do
+      bike3 = other_user.bikes.new(name: "third bike")
+
+      expect(user.bikes).not_to include(bike3)
+      expect(other_user.bikes).to include(bike3)
+    end
 
   end
 end
