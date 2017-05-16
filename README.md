@@ -1,5 +1,5 @@
 # MbMb - Moto bike Maintenance buddy
-> First personal project after finishing my Codaisseur education
+> First personal project after finishing my Codaisseur education - CURRENTLY UNDER CONSTRUCTION
 
 ## About
 This project I have set up to create a motorbike maintenance Web Application to be used for my motorbike.
@@ -15,8 +15,6 @@ As an example I'm looking at this App: [Car Maintenance Reminder Light](https://
 To be shot...
 
 ## Running Locally
-> This won't do much for you at the moment... just warning you...
-
 Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bundler.io/) installed.
 You should also have a [Postgresql](https://www.postgresql.org/) database running.
 
