@@ -84,12 +84,11 @@ describe "Bike model" do
   describe "- Association with user: " do
     let!(:user) { create :user }
     let!(:other_user) { create :user }
-    let!(:bike) { create :bike, user: user }
+    let!(:bike1) { create :bike, user: user }
+    let!(:bike2) { create :bike, user: user }
+    let!(:bike3) { create :bike, user: other_user }
 
     it "has many bikes" do
-      bike1 = user.bikes.new(name: "first bike")
-      bike2 = user.bikes.new(name: "second bike")
-
       expect(user.bikes).to include(bike1)
       expect(user.bikes).to include(bike2)
     end
@@ -102,8 +101,6 @@ describe "Bike model" do
     end
 
     it "deletes associated bikes" do
-      bike1 = user.bikes.new(name: "first bike")
-      bike2 = user.bikes.new(name: "second bike")
       expect { user.destroy }.to change(Bike, :count).by(-2)
     end
   end
