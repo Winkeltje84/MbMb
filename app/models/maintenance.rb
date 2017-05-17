@@ -5,10 +5,9 @@ class Maintenance < ApplicationRecord
   validates :date, presence: true,
             format: { with: /(19|20)\d{2}/i },
             numericality: {
-              greater_than_or_equal_to: 1900,
-              less_than_or_equal_to: Date.today.year
+              greater_than_or_equal_to: 100.years.ago,
+              less_than_or_equal_to: Date.today
             }
-  validates :costs
   validates :oil, presence: true
   validates :sparkplugs, presence: true
   validates :airfilter, presence: true

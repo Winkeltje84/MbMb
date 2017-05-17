@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516160532) do
+ActiveRecord::Schema.define(version: 20170517094936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20170516160532) do
 
   create_table "maintenances", force: :cascade do |t|
     t.integer  "odometer"
-    t.datetime "date"
     t.decimal  "costs"
     t.boolean  "oil"
     t.boolean  "sparkplugs"
@@ -44,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170516160532) do
     t.integer  "bike_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.date     "date"
     t.index ["bike_id"], name: "index_maintenances_on_bike_id", using: :btree
   end
 
