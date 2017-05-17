@@ -1,3 +1,13 @@
 // Place all the styles related to the Maintenances controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.maintenance-container {
+  max-width: 1400px;
+  margin: 0px auto 0 auto;
+  padding: 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

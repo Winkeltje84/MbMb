@@ -1,5 +1,6 @@
 class MaintenancesController < ApplicationController
   before_action :set_maintenance, only: [:edit, :update]
+  before_action :set_bike, only: [:index]
   before_action :authenticate_user!
 
   def index
@@ -10,5 +11,9 @@ class MaintenancesController < ApplicationController
 
     def set_maintenance
       @maintenance = Maintenance.find(params[:id])
+    end
+
+    def set_bike
+      @bike = Bike.find(params[:bike_id])
     end
 end
