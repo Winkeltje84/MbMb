@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show]
-  resources :bikes
+  resources :bikes do
+    resources :maintenances
+  end
 end
