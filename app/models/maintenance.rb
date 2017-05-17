@@ -13,4 +13,9 @@ class Maintenance < ApplicationRecord
   # validates :break_back, presence: true
   # validates :breakfluid, presence: true
   # validates :tyres, presence: true
+
+  def self.find_bike_maintenances(bike_id)
+    bike_maintenances = Maintenance.select{|maintenance| maintenance.bike_id == bike_id}
+    return bike_maintenances
+  end
 end
