@@ -1,6 +1,6 @@
 class MaintenancesController < ApplicationController
   before_action :set_maintenance, only: [:edit, :update]
-  before_action :set_bike, only: [:index]
+  before_action :set_bike, only: [:index, :new]
   before_action :authenticate_user!
 
   def index
@@ -8,7 +8,7 @@ class MaintenancesController < ApplicationController
   end
 
   def new
-    
+    @maintenance = Maintenance.new
   end
 
   private
