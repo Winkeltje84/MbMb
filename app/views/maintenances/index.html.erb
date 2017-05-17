@@ -1,0 +1,110 @@
+index for maintenances
+
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>
+        Maintenance date:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.date %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Odometer:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.odometer %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Costs:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.costs %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Oil change:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.oil %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Sparkplugs replaced:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.sparkplugs %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Airfilter replaced:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.airfilter %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Oilfilter replaced:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.oilfilter %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Coolingfluid replaced:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.coolingfluid %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Chain replaced:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.chain %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Front break replaced:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.break_front %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Rear brake replaced:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.break_back %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        Brake fluid replaced:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.breakfluid %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <th>
+        New tyres:
+      </th>
+      <% @bike_maintenances.each do |maintenance| %>
+        <td><%= maintenance.tyres %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

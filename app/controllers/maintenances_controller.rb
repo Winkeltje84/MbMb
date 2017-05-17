@@ -4,7 +4,6 @@ class MaintenancesController < ApplicationController
 
   def index
     @bike_maintenances = Maintenance.find_bike_maintenances(params[:bike_id].to_i)
-    debugger
   end
 
   private
