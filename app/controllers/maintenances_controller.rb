@@ -7,6 +7,10 @@ class MaintenancesController < ApplicationController
     @bike_maintenances = Maintenance.find_bike_maintenances(params[:bike_id].to_i)
   end
 
+  def new
+    
+  end
+
   private
 
     def set_maintenance
