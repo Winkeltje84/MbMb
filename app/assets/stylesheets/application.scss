@@ -5,3 +5,21 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.notice {
+  padding: 15px;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: green;
+}
+
+.alert {
+  color: red;
+  padding: 15px;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}

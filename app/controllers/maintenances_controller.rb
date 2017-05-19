@@ -16,9 +16,11 @@ class MaintenancesController < ApplicationController
     # debugger
     @new_maintenance = @bike.maintenances.build(maintenance_params)
     if @new_maintenance.save
-      redirect_to bike_maintenances_path, notice: "Maintenance successfully added"
+      flash[:notice] = "Maintenance successfully added"
+      redirect_to bike_maintenances_path
     else
-      render :new, notice: "Maintenance build failed"
+      flash[:alert] = "Maintenance build failed"
+      render :new
     end
   end
 
