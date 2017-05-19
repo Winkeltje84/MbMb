@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :bikes do
     resources :maintenances
   end
+
+  resources :maintenances, only: [:new, :create]
 end
