@@ -1,12 +1,49 @@
 
 <%= form_for @maintenance do |maintenance| %>
   <div class="form-group">
-    <label for="name">Maintenance date:</label>
+    <label>Maintenance date:</label>
     <%= maintenance.date_select :date, placeholder: "Enter your bike's name", class: "form-control" %>
   </div>
   <div class="form-group">
-    <label for="name">Odometer:</label>
+    <label>Odometer:</label>
+      <%= maintenance.number_field :odometer, placeholder: "Enter the odometer stand", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label>Costs:</label>
+      <%= maintenance.number_field :odometer, placeholder: "Enter the costs of the maintenance", class: "form-control" %>
+  </div>
 
+  <label>Maintenances</label>
+
+  <div class="form-group">
+    <%= maintenance.check_box :oil %> Oil change
+  </div>
+  <div class="form-group">
+    <%= maintenance.check_box :sparkplugs %> Sparkplugs replaced
+  </div>
+  <div class="form-group">
+    <%= maintenance.check_box :airfilter %> Airfilter replaced
+  </div>
+  <div class="form-group">
+    <%= maintenance.check_box :oilfilter %> Oilfilter replaced
+  </div>
+  <div class="form-group">
+    <%= maintenance.check_box :coolingfluid %> coolingfluid changed
+  </div>
+  <div class="form-group">
+    <%= maintenance.check_box :chain %> Chain replaced
+  </div>
+  <div class="form-group">
+    <%= maintenance.check_box :break_front %> Front brake replaced
+  </div>
+  <div class="form-group">
+    <%= maintenance.check_box :break_back %> Rear brake replaced
+  </div>
+  <div class="form-group">
+    <%= maintenance.check_box :breakfluid %> breakfluid changed
+  </div>
+  <div class="form-group">
+    <%= maintenance.check_box :tyres %> New tyres
   </div>
 
   <%= maintenance.submit "Create Maintenance", class: "btn btn-default" %>
