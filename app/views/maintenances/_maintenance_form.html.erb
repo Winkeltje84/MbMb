@@ -1,49 +1,56 @@
-<%= form_for [@bike, @bike.maintenances.new] do |maintenance| %>
-  <div class="form-group">
-    <label>Maintenance date:</label>
-    <%= maintenance.date_select :date, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <label>Odometer:</label>
-      <%= maintenance.number_field :odometer, placeholder: "Enter the odometer stand", class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <label>Costs:</label>
-      <%= maintenance.number_field :costs, placeholder: "Enter the costs of the maintenance", class: "text-field form-control", step: 0.01 %>
-  </div>
+<div class="panel panel-primary">
+  <div class="panel-heading">Add new maintenance of bike <%= @bike.name %></div>
+    <div class="panel-body">
+      <%= form_for [@bike, @bike.maintenances.new] do |maintenance| %>
+        <div class="form-group">
+          <label>Maintenance date:</label>
+          <%= maintenance.date_select :date, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <label>Odometer:</label>
+            <%= maintenance.number_field :odometer, placeholder: "Enter the odometer stand", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <label>Costs:</label>
+            <%= maintenance.number_field :costs, placeholder: "Enter the costs of the maintenance", class: "text-field form-control", step: 0.01 %>
+        </div>
 
-  <label>Maintenances</label>
+        <label>Maintenances</label>
 
-  <div class="form-group">
-    Oil change: <%= maintenance.select :oil , [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
-  <div class="form-group">
-    Sparkplugs replaced: <%= maintenance.select :sparkplugs, [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
-  <div class="form-group">
-    Airfilter replaced: <%= maintenance.select :airfilter, [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
-  <div class="form-group">
-    Oilfilter replaced: <%= maintenance.select :oilfilter, [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
-  <div class="form-group">
-    Coolingfluid changed: <%= maintenance.select :coolingfluid, [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
-  <div class="form-group">
-    Chain replaced: <%= maintenance.select :chain, [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
-  <div class="form-group">
-    Front brake replaced: <%= maintenance.select :break_front, [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
-  <div class="form-group">
-    Rear brake replaced: <%= maintenance.select :break_back, [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
-  <div class="form-group">
-    brakefluid changed: <%= maintenance.select :breakfluid, [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
-  <div class="form-group">
-    New tyres: <%= maintenance.select :tyres, [["no", false], ["yes", true]], class: "form-control" %>
-  </div>
+        <div class="form-group">
+          Oil change: <%= maintenance.select :oil , [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Sparkplugs replaced: <%= maintenance.select :sparkplugs, [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Airfilter replaced: <%= maintenance.select :airfilter, [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Oilfilter replaced: <%= maintenance.select :oilfilter, [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Coolingfluid changed: <%= maintenance.select :coolingfluid, [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Chain replaced: <%= maintenance.select :chain, [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Front brake replaced: <%= maintenance.select :break_front, [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Rear brake replaced: <%= maintenance.select :break_back, [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
+        <div class="form-group">
+          brakefluid changed: <%= maintenance.select :breakfluid, [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
+        <div class="form-group">
+          New tyres: <%= maintenance.select :tyres, [["no", false], ["yes", true]], class: "form-control" %>
+        </div>
 
-  <%= maintenance.submit "Create Maintenance", class: "btn btn-default" %>
-<% end %>
+        <%= maintenance.submit "Create Maintenance", class: "btn btn-default" %>
+        <%= link_to "Back to your bikes maintenances", bike_maintenances_path, class: "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>
