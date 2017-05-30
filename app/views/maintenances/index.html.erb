@@ -111,6 +111,23 @@
               <td><%= maintenance.tyres %></td>
             <% end %>
           </tr>
+          <tr>
+            <th></th>
+            <% @bike_maintenances.each do |maintenance| %>
+              <td>
+                <%= link_to "EDIT", edit_bike_maintenance_path(@bike, maintenance), class: "btn btn-default" %>
+
+              </td>
+            <% end %>
+          </tr>
+          <tr>
+            <th></th>
+            <% @bike_maintenances.each do |maintenance| %>
+            <td>
+              <button class="btn btn-default">DELETE</button>
+            </td>
+            <% end %>
+          </tr>
         </tbody>
       </table>
     </div>

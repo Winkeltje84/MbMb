@@ -48,7 +48,7 @@
           New tyres: <%= maintenance.select :tyres, [["no", false], ["yes", true]], class: "form-control" %>
         </div>
 
-        <%= maintenance.submit "Create Maintenance", class: "btn btn-default" %>
+        <%= maintenance.submit "Save Maintenance", class: "btn btn-default" %>
         <%= link_to "Back to your bikes maintenances", bike_maintenances_path, class: "btn btn-default" %>
       <% end %>
     </div>

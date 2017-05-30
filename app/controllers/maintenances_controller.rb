@@ -1,6 +1,6 @@
 class MaintenancesController < ApplicationController
   before_action :set_maintenance, only: [:edit, :update]
-  before_action :set_bike, only: [:index, :new, :create]
+  before_action :set_bike, only: [:index, :new, :create, :edit]
   before_action :authenticate_user!
 
   def index
@@ -22,6 +22,10 @@ class MaintenancesController < ApplicationController
       flash[:alert] = "Maintenance build failed"
       render :new
     end
+  end
+
+  def edit
+
   end
 
   private
