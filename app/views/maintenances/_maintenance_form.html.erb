@@ -1,7 +1,6 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">Add new maintenance of bike <%= @bike.name %></div>
+
     <div class="panel-body">
-      <%= form_for [@bike, @bike.maintenances.new] do |maintenance| %>
+      <%= form_for [@bike, @maintenance] do |maintenance| %>
         <div class="form-group">
           <label>Maintenance date:</label>
           <%= maintenance.date_select :date, class: "form-control" %>
@@ -48,7 +47,7 @@
           New tyres: <%= maintenance.select :tyres, [["no", false], ["yes", true]], class: "form-control" %>
         </div>
 
-        <%= maintenance.submit "Save Maintenance", class: "btn btn-default" %>
+        <%= maintenance.submit (@maintenance.new_record? ? "Create" : "Update"), class: "btn btn-default" %>
         <%= link_to "Back to your bikes maintenances", bike_maintenances_path, class: "btn btn-default" %>
       <% end %>
     </div>
