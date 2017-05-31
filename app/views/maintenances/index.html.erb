@@ -116,16 +116,8 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td>
                 <%= link_to "EDIT", edit_bike_maintenance_path(@bike, maintenance), class: "btn btn-default" %>
-
+                <%= link_to "DELETE", bike_maintenance_path(@bike, maintenance), method: :delete, data: { confirm: "Are you sure you want to delelte this maintenance?" }, class: "btn btn-default" %>
               </td>
-            <% end %>
-          </tr>
-          <tr>
-            <th></th>
-            <% @bike_maintenances.each do |maintenance| %>
-            <td>
-              <button class="btn btn-default">DELETE</button>
-            </td>
             <% end %>
           </tr>
         </tbody>

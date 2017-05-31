@@ -1,5 +1,5 @@
 class MaintenancesController < ApplicationController
-  before_action :set_maintenance, only: [:edit, :update]
+  before_action :set_maintenance, only: [:edit, :update, :destroy]
   before_action :set_bike, only: [:index, :new, :create, :edit]
   before_action :authenticate_user!
 
@@ -35,6 +35,15 @@ class MaintenancesController < ApplicationController
     else
       flash[:alert] = "Maintenance update failed"
       render :update
+    end
+  end
+
+  def destroy
+    if @maintenance.destroy
+      flash[:notice] = "Maintenance successfully deleted"
+      redirect_to bike_maintenances_path
+    else
+      flash[:alert] = "Unsuccessful in deleting maintenance"
     end
   end
 
