@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show]
-  before_action :set_bike_name, only: [:show]
+  before_action :set_bike_name, only: [:show, :new]
 
   def show
     # debugger

@@ -15,7 +15,7 @@
                <% if bike.has_schedule? %>
                  <%= link_to "Show Schedule", bike_schedule_path(bike, bike.schedule), class: "btn btn-default" %>
                <% else %>
-                 <p>no schedule :-(</p>
+                 <%= link_to "Create Schedule", new_bike_schedule_path(bike), class: "btn btn-default" %>
                <% end %>
           </div>
         <% end %>

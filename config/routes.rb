@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :bikes do
     resources :maintenances
-    resources :schedules, only: [:show]
+    resources :schedules, only: [:show, :new]
   end
 
 end
