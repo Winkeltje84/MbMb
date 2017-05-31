@@ -13,7 +13,7 @@
                <%= link_to "View", bike, class: "btn btn-default" %>
                <%= link_to "Maintenance", bike_maintenances_path(bike), class: "btn btn-default" %>
                <% if bike.has_schedule? %>
-                 <p>the bike has a schedule</p>
+                 <%= link_to "Show Schedule", bike_schedule_path(bike, bike.schedule), class: "btn btn-default" %>
                <% else %>
                  <p>no schedule :-(</p>
                <% end %>
