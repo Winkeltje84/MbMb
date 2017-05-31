@@ -1,0 +1,39 @@
+    <div class="panel-body">
+      <%= form_for [@bike, @schedule] do |schedule| %>
+        <div class="form-group">
+          Oil change: <%= schedule.number_field :oil , placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Sparkplugs replaced: <%= schedule.number_field :sparkplugs, placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Airfilter replaced: <%= schedule.number_field :airfilter, placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Oilfilter replaced: <%= schedule.number_field :oilfilter, placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Coolingfluid changed: <%= schedule.number_field :coolingfluid, placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Chain replaced: <%= schedule.number_field :chain, placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Front brake replaced: <%= schedule.number_field :break_front, placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          Rear brake replaced: <%= schedule.number_field :break_back, placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          brakefluid changed: <%= schedule.number_field :breakfluid, placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          New tyres: <%= schedule.number_field :tyres, placeholder: "Enter amount of kilometers", class: "form-control" %>
+        </div>
+
+        <%= schedule.submit (@schedule.new_record? ? "Create" : "Update"), class: "btn btn-default" %>
+        <%= link_to "Back to your bikes", bikes_path, class: "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>

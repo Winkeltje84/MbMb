@@ -1,7 +1,7 @@
 class Bike < ApplicationRecord
   belongs_to :user
   has_many :maintenances, dependent: :destroy
-  has_one :schedule
+  has_one :schedule, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 15 }
   validates :brand, presence: true, length: { maximum: 10 }
