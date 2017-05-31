@@ -1,6 +1,3 @@
-index for maintenances
-
-
 <div class="panel panel-primary">
   <div class="panel-heading">Maintenance of bike <%= @bike.name %></div>
   <div class="panel-body">
@@ -112,6 +109,15 @@ index for maintenances
             </th>
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.tyres %></td>
+            <% end %>
+          </tr>
+          <tr>
+            <th></th>
+            <% @bike_maintenances.each do |maintenance| %>
+              <td>
+                <%= link_to "EDIT", edit_bike_maintenance_path(@bike, maintenance), class: "btn btn-default" %>
+                <%= link_to "DELETE", bike_maintenance_path(@bike, maintenance), method: :delete, data: { confirm: "Are you sure you want to delelte this maintenance?" }, class: "btn btn-default" %>
+              </td>
             <% end %>
           </tr>
         </tbody>
