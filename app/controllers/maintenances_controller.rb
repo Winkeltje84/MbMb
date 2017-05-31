@@ -28,6 +28,16 @@ class MaintenancesController < ApplicationController
     # debugger
   end
 
+  def update
+    if @maintenance.update(maintenance_params)
+      flash[:notice] = "Maintenance successfully updated"
+      redirect_to bike_maintenances_path
+    else
+      flash[:alert] = "Maintenance update failed"
+      render :update
+    end
+  end
+
   private
 
     def set_maintenance
