@@ -13,4 +13,8 @@ class Bike < ApplicationRecord
               less_than_or_equal_to: Date.today.year
             }
   validates :odometer, presence: true, length: { maximum: 6 }
+
+  def has_schedule?
+    schedule.present? && schedule.persisted?
+  end
 end

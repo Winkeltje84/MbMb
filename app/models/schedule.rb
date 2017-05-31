@@ -1,14 +1,14 @@
 class Schedule < ApplicationRecord
   belongs_to :bike
 
-  validates :oil
-  validates :sparkplugs
-  validates :airfilter
-  validates :oilfilter
-  validates :coolingfluid
-  validates :chain
-  validates :break_front
-  validates :break_back
-  validates :breakfluid
-  validates :tyres
+  validates :oil, presence: true
+  validates :sparkplugs, presence: true
+  validates :airfilter, presence: true
+  validates :oilfilter, presence: true
+  validates :coolingfluid, presence: true
+  validates :chain, presence: true
+  validates :break_front, presence: true
+  validates :break_back, presence: true
+  validates :breakfluid, presence: true
+  validates :tyres, presence: true
 end

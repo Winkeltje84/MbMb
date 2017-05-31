@@ -12,6 +12,11 @@
               <div>Meter: <%= bike.odometer %></div>
                <%= link_to "View", bike, class: "btn btn-default" %>
                <%= link_to "Maintenance", bike_maintenances_path(bike), class: "btn btn-default" %>
+               <% if bike.has_schedule? %>
+                 <p>the bike has a schedule</p>
+               <% else %>
+                 <p>no schedule :-(</p>
+               <% end %>
           </div>
         <% end %>
       </div>
