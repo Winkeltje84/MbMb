@@ -4,19 +4,17 @@ class SchedulesController < ApplicationController
   before_action :set_bike, only: [:new, :create, :show, :edit]
 
   def show
-    # debugger
+
   end
 
   def new
     @schedule = Schedule.new
-    # debugger
+
   end
 
   def create
-    # debugger
     @new_schedule = @bike.build_schedule(schedule_params)
     if @new_schedule.save
-      debugger
       flash[:notice] = "Schedule successfully created"
       redirect_to bike_schedule_path(@bike, @bike.schedule)
     else
@@ -26,11 +24,10 @@ class SchedulesController < ApplicationController
   end
 
   def edit
-    # debugger
+
   end
 
   def update
-    # debugger
     if @schedule.update(schedule_params)
       flash[:notice] = "Maintenance schedule successfully updated"
       redirect_to bike_schedule_path
@@ -43,7 +40,6 @@ class SchedulesController < ApplicationController
   private
 
     def set_schedule
-      # debugger
       @schedule = Schedule.find(params[:id])
     end
 

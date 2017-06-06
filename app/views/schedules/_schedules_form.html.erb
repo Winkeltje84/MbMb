@@ -1,5 +1,10 @@
     <div class="panel-body">
       <%= form_for [@bike, @schedule] do |schedule| %>
+        <% if @schedule.errors.any? %>
+          <% @schedule.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        <% end %>
         <div class="form-group">
           Oil change: <%= schedule.number_field :oil , placeholder: "Enter amount of kilometers", class: "form-control" %>
         </div>

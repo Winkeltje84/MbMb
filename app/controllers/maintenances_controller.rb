@@ -9,11 +9,9 @@ class MaintenancesController < ApplicationController
 
   def new
     @maintenance = Maintenance.new
-    # debugger
   end
 
   def create
-    # debugger
     @new_maintenance = @bike.maintenances.build(maintenance_params)
     if @new_maintenance.save
       flash[:notice] = "Maintenance successfully added"
@@ -25,11 +23,10 @@ class MaintenancesController < ApplicationController
   end
 
   def edit
-    # debugger
+
   end
 
   def update
-    # debugger
     if @maintenance.update(maintenance_params)
       flash[:notice] = "Maintenance successfully updated"
       redirect_to bike_maintenances_path
