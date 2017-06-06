@@ -22,9 +22,13 @@ class Maintenance < ApplicationRecord
   end
 
   def self.sort_by_date(bike_maintenances)
-    bike_maintenances.sort! { |a,b| a.date <=> b.date } 
+    bike_maintenances.sort! { |a,b| a.date <=> b.date }
     return bike_maintenances
   end
 
+  def self.calculate_km(bike_maintenances, current_odometer)
+    debugger
+
+  end
 
 end
