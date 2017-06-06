@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517094936) do
+ActiveRecord::Schema.define(version: 20170531122259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,23 @@ ActiveRecord::Schema.define(version: 20170517094936) do
     t.index ["bike_id"], name: "index_maintenances_on_bike_id", using: :btree
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "bike_id"
+    t.integer  "oil"
+    t.integer  "sparkplugs"
+    t.integer  "airfilter"
+    t.integer  "oilfilter"
+    t.integer  "coolingfluid"
+    t.integer  "chain"
+    t.integer  "break_front"
+    t.integer  "break_back"
+    t.integer  "breakfluid"
+    t.integer  "tyres"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["bike_id"], name: "index_schedules_on_bike_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -66,4 +83,5 @@ ActiveRecord::Schema.define(version: 20170517094936) do
 
   add_foreign_key "bikes", "users"
   add_foreign_key "maintenances", "bikes"
+  add_foreign_key "schedules", "bikes"
 end

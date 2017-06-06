@@ -1,0 +1,57 @@
+<div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Maintenance schedule for <%= @bike_name %></div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th></th>
+            <th>Kilometers</th>
+          </tr>
+          <tr>
+            <th>Oil:</th>
+            <td><%= @schedule.oil %></td>
+          </tr>
+          <tr>
+            <th>Sparkplugs:</th>
+            <td><%= @schedule.sparkplugs %></td>
+          </tr>
+          <tr>
+            <th>Airfilter:</th>
+            <td><%= @schedule.airfilter %></td>
+          </tr>
+          <tr>
+            <th>Oilfilter:</th>
+            <td><%= @schedule.oilfilter %></td>
+          </tr>
+          <tr>
+            <th>Coolingfluid:</th>
+            <td><%= @schedule.coolingfluid %></td>
+          </tr>
+          <tr>
+            <th>Chain:</th>
+            <td><%= @schedule.chain %></td>
+          </tr>
+          <tr>
+            <th>Front breaks:</th>
+            <td><%= @schedule.break_front %></td>
+          </tr>
+          <tr>
+            <th>Back breaks:</th>
+            <td><%= @schedule.break_back %></td>
+          </tr>
+          <tr>
+            <th>Breakfluid:</th>
+            <td><%= @schedule.breakfluid %></td>
+          </tr>
+          <tr>
+            <th>Tires:</th>
+            <td><%= @schedule.tyres %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= link_to "EDIT", edit_bike_schedule_path(@bike, @schedule), class: "btn btn-default" %>
+<%= link_to "Back to bikes", bikes_path, class: "btn btn-default" %>

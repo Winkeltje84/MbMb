@@ -1,6 +1,7 @@
 class Bike < ApplicationRecord
   belongs_to :user
   has_many :maintenances, dependent: :destroy
+  has_one :schedule, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 15 }
   validates :brand, presence: true, length: { maximum: 10 }
@@ -12,4 +13,8 @@ class Bike < ApplicationRecord
               less_than_or_equal_to: Date.today.year
             }
   validates :odometer, presence: true, length: { maximum: 6 }
+
+  def has_schedule?
+    schedule.present? && schedule.persisted?
+  end
 end
