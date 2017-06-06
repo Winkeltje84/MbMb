@@ -4,7 +4,7 @@ class SchedulesController < ApplicationController
   before_action :set_bike, only: [:new, :create, :show, :edit]
 
   def show
-    debugger
+    # debugger
   end
 
   def new
@@ -21,12 +21,12 @@ class SchedulesController < ApplicationController
       redirect_to bike_schedule_path(@bike, @bike.schedule)
     else
       flash[:alert] = "Schedule could not be created"
-      render :new
+      redirect_to new_bike_schedule_path
     end
   end
 
   def edit
-    debugger
+    # debugger
   end
 
   def update
@@ -36,7 +36,7 @@ class SchedulesController < ApplicationController
       redirect_to bike_schedule_path
     else
       flash[:alert] = "Maintenance schedule update failed"
-      render :update
+      redirect_to bike_schedule_path
     end
   end
 

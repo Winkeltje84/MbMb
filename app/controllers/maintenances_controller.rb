@@ -20,7 +20,7 @@ class MaintenancesController < ApplicationController
       redirect_to bike_maintenances_path
     else
       flash[:alert] = "Maintenance build failed"
-      render :new
+      redirect_to new_bike_maintenance_path
     end
   end
 
@@ -29,13 +29,13 @@ class MaintenancesController < ApplicationController
   end
 
   def update
-    debugger
+    # debugger
     if @maintenance.update(maintenance_params)
       flash[:notice] = "Maintenance successfully updated"
       redirect_to bike_maintenances_path
     else
       flash[:alert] = "Maintenance update failed"
-      render :update
+      redirect_to edit_bike_maintenance_path
     end
   end
 
@@ -45,6 +45,7 @@ class MaintenancesController < ApplicationController
       redirect_to bike_maintenances_path
     else
       flash[:alert] = "Unsuccessful in deleting maintenance"
+      redirect_to bike_maintenances_path
     end
   end
 
