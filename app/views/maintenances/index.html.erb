@@ -2,6 +2,7 @@
   <div class="panel-heading">Maintenance of bike <%= @bike.name %></div>
   <div class="panel-body">
     <div class="col-xs-12 maintenance-container">
+      <%= link_to "New", new_bike_maintenance_path, class: "btn btn-default" %>
       <table class="table table-striped">
         <tbody>
           <tr>
@@ -12,7 +13,7 @@
               <td><%= maintenance.date %></td>
             <% end %>
             <td>
-              <%= link_to "New", new_bike_maintenance_path, class: "btn btn-default" %>
+              kilometers ago:
             </td>
           </tr>
           <tr>
@@ -38,6 +39,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.oil %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:oil] %>
+            </td>
           </tr>
           <tr>
             <th>

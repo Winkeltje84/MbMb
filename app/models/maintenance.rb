@@ -16,7 +16,7 @@ class Maintenance < ApplicationRecord
 
   def self.find_bike_maintenances(bike_id)
     bike_maintenances = Maintenance.select{ |maintenance| maintenance.bike_id == bike_id }
-    sort_by_date(bike_maintenances)
+    # sort_by_date(bike_maintenances)
     # bike_maintenances.sort_by_date
     return bike_maintenances
   end
@@ -27,8 +27,28 @@ class Maintenance < ApplicationRecord
   end
 
   def self.calculate_km(bike_maintenances, current_odometer)
-    debugger
+    # debugger
+    # bike_maintenances.sort_by_date_from_current_to_old
+    sort_by_date_from_current_to_old(bike_maintenances)
+    kilometers = {} # create new object that will receive all km
+    # debugger
+    find_oil(bike_maintenances, kilometers, current_odometer)
+    return kilometers
+  end
 
+  def self.sort_by_date_from_current_to_old(bike_maintenances)
+    bike_maintenances.sort! { |a,b| b.date <=> a.date }
+    # return bike_maintenances
+  end
+
+  def self.find_oil(bike_maintenances, kilometers, current_odometer)
+    bike_maintenances.each do |maintenance|
+
+      if (maintenance.oil === true)
+        kilometers[:oil] = (current_odometer - maintenance.odometer)
+      end
+      # debugger
+    end
   end
 
 end

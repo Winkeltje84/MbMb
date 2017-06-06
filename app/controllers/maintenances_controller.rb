@@ -6,6 +6,7 @@ class MaintenancesController < ApplicationController
   def index
     @bike_maintenances = Maintenance.find_bike_maintenances(params[:bike_id].to_i)
     @km_ago = Maintenance.calculate_km(@bike_maintenances, @bike.odometer)
+    @bike_maintenances = Maintenance.sort_by_date(@bike_maintenances)
   end
 
   def new
