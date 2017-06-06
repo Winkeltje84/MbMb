@@ -2,6 +2,7 @@
   <div class="panel-heading">Maintenance of bike <%= @bike.name %></div>
   <div class="panel-body">
     <div class="col-xs-12 maintenance-container">
+      <%= link_to "Add New Maintenance", new_bike_maintenance_path, class: "btn btn-default" %>
       <table class="table table-striped">
         <tbody>
           <tr>
@@ -12,7 +13,7 @@
               <td><%= maintenance.date %></td>
             <% end %>
             <td>
-              <%= link_to "New", new_bike_maintenance_path, class: "btn btn-default" %>
+              kilometers since last maintenance:
             </td>
           </tr>
           <tr>
@@ -38,6 +39,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.oil %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:oil] %>
+            </td>
           </tr>
           <tr>
             <th>
@@ -46,6 +50,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.sparkplugs %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:sparkplugs] %>
+            </td>
           </tr>
           <tr>
             <th>
@@ -54,6 +61,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.airfilter %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:airfilter] %>
+            </td>
           </tr>
           <tr>
             <th>
@@ -62,6 +72,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.oilfilter %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:oilfilter] %>
+            </td>
           </tr>
           <tr>
             <th>
@@ -70,6 +83,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.coolingfluid %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:coolingfluid] %>
+            </td>
           </tr>
           <tr>
             <th>
@@ -78,6 +94,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.chain %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:chain] %>
+            </td>
           </tr>
           <tr>
             <th>
@@ -86,6 +105,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.break_front %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:break_front] %>
+            </td>
           </tr>
           <tr>
             <th>
@@ -94,6 +116,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.break_back %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:break_back] %>
+            </td>
           </tr>
           <tr>
             <th>
@@ -102,6 +127,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.breakfluid %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:breakfluid] %>
+            </td>
           </tr>
           <tr>
             <th>
@@ -110,6 +138,9 @@
             <% @bike_maintenances.each do |maintenance| %>
               <td><%= maintenance.tyres %></td>
             <% end %>
+            <td>
+              <%= @km_ago[:tyres] %>
+            </td>
           </tr>
           <tr>
             <th></th>
