@@ -29,6 +29,7 @@ class MaintenancesController < ApplicationController
   end
 
   def update
+    debugger
     if @maintenance.update(maintenance_params)
       flash[:notice] = "Maintenance successfully updated"
       redirect_to bike_maintenances_path
